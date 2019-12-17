@@ -62,6 +62,7 @@ As of Dec 2019, we develop against:
 
 A typical project structure will look like the following:
 
+```
 /                       - Main repository.
 
     * README.md 
@@ -80,9 +81,11 @@ A typical project structure will look like the following:
 /{PROJECT}/apps/        - Django Applications.
 /{PROJECT}/apps/{APP}   - An example application.
 /ansible                - ansible plays.
+```
 
 A typical app that we're packaging will look like the following:
 
+```
 /                       - Main repository.
 
     * README.md
@@ -101,5 +104,6 @@ A typical app that we're packaging will look like the following:
     * views.py
     * urls.py
     * ...
+```
 
 /{APP}/migrations       - App specific migrations.
