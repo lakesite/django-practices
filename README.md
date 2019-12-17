@@ -58,7 +58,22 @@ As of Dec 2019, we develop against:
 * Use [Sentry](https://sentry.io/welcome/) for logging errors.
 * Use [Whitenoise](https://whitenoise.readthedocs.io/) for serving static files.
 
-## Project Structure ##
+## Naming ##
+
+Django applications should have as a convention a repository/project name of:
+
+django-```{APP_NAME}```
+
+Django projects which use apps don't have this requirement and can simply be
+named:
+
+```{PROJECT_NAME}```
+
+## Layout ##
+
+In general, use the following layout for projects and django apps:
+
+### Projects ###
 
 A typical project structure will look like the following:
 
@@ -82,6 +97,8 @@ A typical project structure will look like the following:
 /{PROJECT}/apps/{APP}   - An example application.
 /ansible                - ansible plays.
 ```
+
+### Apps ###
 
 A typical app that we're packaging will look like the following:
 
