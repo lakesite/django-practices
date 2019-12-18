@@ -98,6 +98,38 @@ A typical project structure will look like the following:
 /ansible                - ansible plays.
 ```
 
+### Project Settings ###
+
+Each project should have a settings package API for managing configurations for
+development, staging and production environments.  The simple convention is:
+
+```
+/settings
+    /__init__.py        - Define a regular package.
+    /base.py            - Base settings that apply to any environment.
+    /development.py     - Settings for development which imports from base.
+    /staging.py         - Settings for staging which imports from base.
+    /production.py      - Settings for production which imports from base.
+```
+
+The first line from development.py, staging.py and production.py are:
+
+```from .base import *```
+
+Using these settings in development, staging or production can be defined 
+explicitly e.g.;
+
+```
+(pipenv-environment) $ python manage.py runserver --settings=PROJECT_NAME.settings.development
+```
+
+Or by using an environment variable with DJANGO_SETTINGS_MODULE:
+
+```
+(pipenv-environment) $ export DJANGO_SETTINGS_MODULE=PROJECT_NAME.settings.staging
+(pipenv-environment) $ python manage.py runserver
+```
+
 ### Apps ###
 
 A typical app that we're packaging will look like the following:
@@ -124,3 +156,23 @@ A typical app that we're packaging will look like the following:
 ```
 
 /{APP}/migrations       - App specific migrations.
+
+## Documentation ##
+
+Projects should generally contain a /docs folder with the following:
+
+/docs/index.md          - Table of contents or main document index.
+/docs/rationale.md      - Why are we doing this?  What problem are we solving? etc.
+/docs/platform.md       - Target platform (Ubuntu 18.04.3 / Django 2.2.x)
+/docs/install.md        - Installation instructions.
+/docs/running.md        - How to run the application.
+/docs/standards.md      - Standards for the project not already defined through this document.
+/docs/development.md    - How to properly setup a development environment.
+
+Each section should be referenced where appropriate from README.md.
+
+## Licensing ##
+
+The main repository for any project should have a LICENSE.md file per convention,
+and the README.md should summarize what the code is licensed under.  Additional
+3rd party licenses should be referenced under /licenses/
