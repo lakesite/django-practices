@@ -32,7 +32,7 @@ As of Dec 2019, we develop against:
 
 ## Setup ##
 
-* Use [Pipenv] to manage virtual environments.
+* Use [Pipenv](https://pipenv.kennethreitz.org/en/latest/) to manage virtual environments.
 * Always start with a custom user model.
 * Use [generic class based views](https://docs.djangoproject.com/en/dev/topics/class-based-views/generic-display/) if possible, otherwise prefer [class based views](https://docs.djangoproject.com/en/dev/topics/class-based-views/) to function based views.
 * Use [decouple](https://github.com/henriquebastos/python-decouple) and environment variables for anything secret like SECRET_KEY.
