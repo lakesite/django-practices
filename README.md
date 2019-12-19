@@ -161,6 +161,7 @@ A typical app that we're packaging will look like the following:
 
 Projects should generally contain a /docs folder with the following:
 
+```
 /docs/index.md          - Table of contents or main document index.
 /docs/rationale.md      - Why are we doing this?  What problem are we solving? etc.
 /docs/platform.md       - Target platform (Ubuntu 18.04.3 / Django 2.2.x)
@@ -168,6 +169,7 @@ Projects should generally contain a /docs folder with the following:
 /docs/running.md        - How to run the application.
 /docs/standards.md      - Standards for the project not already defined through this document.
 /docs/development.md    - How to properly setup a development environment.
+```
 
 Each section should be referenced where appropriate from README.md.
 
